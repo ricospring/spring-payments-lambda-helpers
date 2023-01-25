@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<configs>
+
+    <config>
+        <id>commerce.api</id>
+        <configClass>dev.commerce.apwebservice.config.CommerceApiConfig</configClass>
+        <loader>
+            <loaderClass>dev.ktech.aws.secret.config.SecretConfigPropertiesLoader</loaderClass>
+            <property>
+                <key>secretName</key>
+                <!--                <value>commerce.api.dev</value>-->
+                <value>commerce.api</value>
+            </property>
+        </loader>
+    </config>
+
+    <config>
+        <id>springpayments.rds</id>
+        <configClass>dev.springpayments.config.JdbiDataSourceConfig</configClass>
+        <loader>
+            <loaderClass>dev.ktech.aws.secret.config.SecretConfigPropertiesLoader</loaderClass>
+            <property>
+                <key>secretName</key>
+                <!--                <value>springpayments.user.dev.rds</value>-->
+                <value>springpayments.user.rds</value>
+            </property>
+        </loader>
+    </config>
+
+</configs>

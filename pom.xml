@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.example</groupId>
+  <artifactId>spring-payments-lambda-helpers</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <properties>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <lombok.version>1.18.24</lombok.version>
+    <ktech.sdk.version>1.2.21</ktech.sdk.version>
+    <codeartifact-extension.version>2.1.1</codeartifact-extension.version>
+    <codeartifact.domain>ktechartifacts</codeartifact.domain>
+    <codeartifact.domainOwner>356635979126</codeartifact.domainOwner>
+    <codeartifact.repository>Ktech-Artifacts</codeartifact.repository>
+    <spring.payments.version>1.0.6-SNAPSHOT</spring.payments.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>dev.ktech-sdk</groupId>
+      <artifactId>ktech-aws</artifactId>
+      <version>${ktech.sdk.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.springpayments</groupId>
+      <artifactId>commerce-ap-web-service</artifactId>
+      <version>${spring.payments.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.springpayments</groupId>
+      <artifactId>core-sdk</artifactId>
+      <version>${spring.payments.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.springpayments</groupId>
+      <artifactId>spring-payment-service</artifactId>
+      <version>${spring.payments.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>dev.ktech.codeartifact</groupId>
+        <artifactId>codeartifact-maven-extension</artifactId>
+        <version>2.1.0</version>
+      </extension>
+    </extensions>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <targetPath>resources/</targetPath>
+        <includes>
+          <include>*.xml</include>
+          <include>spring/*.xml</include>
+        </includes>
+      </resource>
+    </resources>
+  </build>
+</project>
